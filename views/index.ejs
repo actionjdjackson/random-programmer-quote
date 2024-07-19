@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Programmer Quotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1>Random Programmer Quote:</h1>
+  <% if (locals.quote) { %>
+  <div class="card">
+    <p>
+      <%= quote %>
+    </p>
+  </div>
+  <small class="user">Another random quote, by <strong><%= programmer %> 😃 🎉</strong></small>
+  <form id="programmerForm" method="post">
+    <input id="programmer" type="submit" name="programmer" value="<%= programmer %>" formaction="/programmer">
+  </form>
+  <form id="randomForm" method="get">
+    <input id="random" type="submit" name="random" value="Random" formaction="/">
+  </form>
+  <% } else { %>
+  <p class="error">
+    <%= error %>
+  </p>
+  <% } %>
+</body>
+
+</html>
